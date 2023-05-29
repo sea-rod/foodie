@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% load static %}
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl navbar-dark">
+        <a href="#" class="navbar-brand" style="color: black;margin-left: 100px;"><i
+                class="fa fa-dollar"></i><b>Foodie</b></a>
+        <button type="button" class="navbar-toggler col-2" data-toggle="collapse" data-target="#navbarCollapse"
+            style="padding: 0;">
+            <span class="navbar-toggler-icon" style="background-color: black;"></span>
+        </button>
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start mr-5">
+
+            <div class="navbar-nav ml-auto justify-content-start">
+                <a href="#" class="nav-item nav-link mx-4"><span>Home</span></a>
+                <a href="{% url 'menu' %}" class="nav-item nav-link mx-4"><span>Service</span></a>
+                <a href="#" class="nav-item nav-link mx-4"><span>About</span></a>
+                <a href="#" class="nav-item nav-link mx-4"><span>Contact</span></a>
+
+                <!-- <div class="nav-item dropdown col-6">
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img
+                            sizes="21,12" src="" class="avatar" alt="Avatar">
+                        Username <b class="caret"></b></a>
+                    <div class="dropdown-menu" style="left:-20px">
+                        <a href="//{ url 'edit_profile' user.pk %}" class="dropdown-item"><i class="fa fa-user-o"></i>
+                            Profile</a>
+                        <a href="#" class="dropdown-item" onclick="cat_add()"><i class="fa fa-plus"></i> Add
+                            Category</a>
+                        <div class="divider dropdown-divider"></div>
+                        <a href="url 'logout' %}" class="dropdown-item"><i class=" fa fa-power-off"
+                                style="font-size: large;"></i>
+                            Logout</a>
+                    </div>
+                </div> -->
+            </div>
+            <div class="ml-auto" style="display: inline-block;">
+                <a href="url 'signup' %}"><button class="btn" id="signup"
+                        style="border: 1px solid black;">Signup</button></a>
+                <a href="{ url 'login' %}"><button class="btn btn-success">Login</button></a>
+            </div>
+        </div>
+
+    </nav>
+    <div class="green-container">
+        <div class="container ml-1 row">
+            <div class="col-6 p-0">
+                <h1>Dine-in: Order and Reserver Tables Online</h1>
+                <p>Welcome to foodie, the ultimate destination for food lovers looking to order their favourite
+                    meals and book table in formal setting.
+                </p>
+                <button class="btn btn-success"><a style="color: inherit;text-decoration: inherit;"
+                        href="{% url 'menu' %}">View all Services</a></button>
+            </div>
+            <img class="col-6"
+                src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="Food image">
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h2>Our Services</h2>
+        <div id="services" class="row mt-5">
+            <div class="col-4">
+                <img src="https://img.freepik.com/free-photo/blue-lagoon-sangria-lemonade-glasses-inside-ice-tray_114579-3528.jpg?w=740&t=st=1684519428~exp=1684520028~hmac=d4fe0a114a415139c051266af95ad3f2742089e4039e75e5ce5ad6b792d4d5e7"
+                    alt="">
+                <b>
+                    <h5>Premium Beverages for Every Palate</h5>
+                </b>
+                <p>
+                    Our beverages services offers a wide selection of premium drinks,
+                    including special coffees,teas, and cocktails, served with elegance
+                    and sophistication.
+                </p>
+            </div>
+            <div class="col-4">
+                <img src="https://img.freepik.com/free-photo/close-up-food-lover-taking-pictures-meal_23-2149286449.jpg?w=740&t=st=1684519584~exp=1684520184~hmac=18f1321e5b9b3105419e0efb5084ec19ef83e6203243b8959730546d684ecfbd"
+                    alt="">
+                <b>
+                    <h5>Order and Reserve with ease</h5>
+                </b>
+                <p>
+                    Our catering service offers formal dining experience with a delicious
+                    main course and decadent dessert to satisfy all palates.
+                </p>
+            </div>
+
+            <div class="col-4">
+                <img src="https://img.freepik.com/free-photo/traditional-indian-soup-lentils-indian-dhal-spicy-curry-bowl-spices-herbs-rustic-black-wooden-table_2829-18717.jpg?w=740&t=st=1684518230~exp=1684518830~hmac=eb29ce9ad6512392047ed1e750e28da3f217e6002caf04abeff6fb1d73576835"
+                    alt="" height="300px" width="300px">
+                <b>
+                    <h5>Appetizers to tantalize your taste buds</h5>
+                </b>
+                <p>
+                    Our services provide a selections of high-quality starters, crafted
+                    with the finest ingredients to elevate your dining experience
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="green-container pb-3">
+        <div class="ml-1 mb-5 row container">
+            <div class="col-6">
+
+                <h4>Foodie</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem labore dolor quidem, expedita
+                    praesentium hic impedit rem porro id ea. Recusandae magnam minima, fugiat at voluptatem nam
+                    laudantium provident consequuntur.</p>
+            </div>
+            <div class="col-6 pl-5">
+                <h4>Quick links</h4>
+                <a href="">Home</a>
+                <a href="">Menu</a>
+                <a href="">About</a>
+                <a href="">Contacts</a>
+            </div>
+
+        </div>
+        <div class="social-media text-center">
+            <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer-copyright text-center col-12">© 2020 Copyright:
+            <a href="/"> Foodie</a>
+        </div>
+    </footer>
+</body>
+
+</html>

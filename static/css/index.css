@@ -1,0 +1,182 @@
+body {
+    color: rgb(48, 48, 48);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(146, 146, 146);
+
+}
+
+#navbarCollapse>div.navbar-nav.ml-auto.justify-content-start>a:hover,
+.nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgb(64, 64, 64);
+    font-size: large;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.green-container,
+div.about:nth-child(even) {
+    background-color: rgb(245, 255, 245);
+    padding: 100px;
+    height: 100%;
+    width: 100%;
+}
+
+.col-6 h1 {
+    font-size: 80px;
+    line-height: 80px;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+#services div img {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+#services div p {
+    font-size: small;
+    letter-spacing: 0.2ch;
+    color: rgb(150, 150, 150);
+}
+
+#services {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col-6 a {
+    color: rgb(113, 113, 113);
+    display: block;
+}
+
+.social-media a,
+.social-media {
+    color: rgb(138, 138, 138);
+    margin-bottom: 20px;
+    font-size: 24px;
+    word-spacing: 2ch;
+}
+
+/* login */
+
+#login {
+    width: 30%;
+    margin: 100px auto;
+    background-color: rgb(221, 255, 221);
+    padding: 50px 80px;
+    border-radius: 20px;
+}
+
+#login .row input {
+    margin: 0 10px 10px 10px;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+}
+
+#login label {
+    font-size: larger;
+    margin-bottom: 0;
+}
+
+/* rest menu  */
+
+#menu,
+#starters {
+    /* margin: ; */
+    padding: 10px 100px;
+}
+
+#menu input {
+    display: inline-block;
+    border: none;
+}
+
+#menu input:focus,
+#menu input:hover,
+#menu input::after,
+#menu input:active {
+    border: none;
+}
+
+#menu img {
+    float: right;
+    height: 30px;
+    width: 30px;
+    border: 1px solid rgb(168, 168, 168);
+}
+
+#menu img:hover {
+    color: blue;
+    background-color: rgb(237, 237, 237);
+}
+
+hr {
+    margin: 5px 70px 5px 120px;
+    border-color: rgb(129, 129, 129);
+}
+
+/* starters list */
+
+#starters div div.col-2 {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 20px;
+    border-radius: 30px;
+    /* height: 250px; */
+    z-index: 2px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#starters div div.col-2:hover {
+    box-shadow: rgba(0, 0, 0, 0.568) 0px 15px 20px;
+    transition: 0.3s;
+}
+
+#starters div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#starters img {
+    display: block;
+    position: relative;
+    height: 75%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+#starters button {
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    width: 100%;
+    border: none;
+}
+
+#starters div.row {
+    position: relative;
+    width: 100%;
+}
+
+/* about page */
+
+.about {
+    padding: 100px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl navbar-dark">
+        <a href="#" class="navbar-brand" style="color: black;margin-left: 100px;"><i
+                class="fa fa-dollar"></i><b>Foodie</b></a>
+        <button type="button" class="navbar-toggler col-2" data-toggle="collapse" data-target="#navbarCollapse"
+            style="padding: 0;">
+            <span class="navbar-toggler-icon" style="background-color: black;"></span>
+        </button>
+        <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start mr-5">
+
+            <div class="navbar-nav ml-auto justify-content-start">
+                <a href="#" class="nav-item nav-link mx-4"><span>Home</span></a>
+                <a href="#" class="nav-item nav-link mx-4"><span>Service</span></a>
+                <a href="#" class="nav-item nav-link mx-4"><span>About</span></a>
+                <a href="#" class="nav-item nav-link mx-4"><span>Contact</span></a>
+
+                <!-- <div class="nav-item dropdown col-6">
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img
+                        sizes="21,12" src="" class="avatar" alt="Avatar">
+                        Username <b class="caret"></b></a>
+                    <div class="dropdown-menu" style="left:-20px">
+                        <a href="{% url 'edit_profile' user.pk %}" class="dropdown-item"><i class="fa fa-user-o"></i>
+                            Profile</a>
+                        <a href="#" class="dropdown-item" onclick="cat_add()"><i class="fa fa-plus"></i> Add
+                            Category</a>
+                        <div class="divider dropdown-divider"></div>
+                        <a href="{% url 'logout' %}" class="dropdown-item"><i class=" fa fa-power-off"
+                            style="font-size: large;"></i>
+                            Logout</a>
+                        </div>
+                    </div> -->
+            </div>
+            <div class="ml-auto" style="display: inline-block;">
+                <a href="{% url 'signup' %}"><button class="btn" id="signup"
+                        style="border: 1px solid black;">Signup</button></a>
+                <a href="{% url 'login' %}"><button class="btn btn-success">Login</button></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="about my-2">
+        <div class=" ml-1 row">
+            <div class="col-6 p-0">
+                <h2>Welcome to Foodie</h2>
+                <p>
+                    Welcome to Foodie, where culinary excellence meets warm hospitality. Located in the heart
+                    of
+                    [City/Neighborhood], we are passionate about delivering an unforgettable dining experience that
+                    tantalizes your taste
+                    buds and nourishes your soul.
+                </p>
+            </div>
+            <img class="col-6"
+                src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="Food image">
+        </div>
+    </div>
+
+
+    <div class="about my-5">
+        <div class="row">
+            <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="" class="col-6 p-0 m-0">
+            <div class="col-6 pl-5 ">
+                <h2>Our Story: A Passion for Culinary Excellence</h2>
+                <p>Our story began with a shared love for food and a desire to create a welcoming space where people can
+                    gather, indulge,
+                    and create lasting memories. Inspired by the vibrant culinary traditions from around the world, we
+                    embarked on a journey
+                    to craft a menu that showcases the very best flavors and ingredients</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about my-5">
+        <div class="row">
+            <div class="col-6 pl-5 ">
+                <h2>Crafted with Care: Our Culinary Philosophy</h2>
+                <p>At Foodie, we believe in the power of culinary artistry. Our talented team of chefs, led
+                    by [Head
+                    Chef/Owner's Name], brings their expertise and passion to every dish. From meticulously sourced
+                    ingredients to precise
+                    cooking techniques, we strive for perfection in every bite.</p>
+            </div>
+            <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="" class="col-6 p-0 m-0">
+        </div>
+    </div>
+
+
+    <div class="about my-5">
+        <div class="row">
+            <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="" class="col-6 p-0 m-0">
+            <div class="col-6 pl-5 ">
+                <h2>A Gastronomic Journey: Menu Highlights</h2>
+                <p>Our menu is a celebration of flavors and a fusion of global influences. Whether you crave a sizzling
+                    steak, a delicate
+                    seafood creation, or a vibrant vegetarian delight, our carefully crafted dishes cater to every
+                    palate. We take pride in
+                    sourcing local, sustainable ingredients whenever possible, supporting our community and reducing our
+                    environmental
+                    footprint.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about my-5">
+        <div class="row">
+            <div class="col-6 pl-5 ">
+                <h2>Meet Our Culinary Maestro: [Head Chef/Owner's Name]</h2>
+                <p>Step into our restaurant, and you'll be greeted by an inviting ambiance that effortlessly blends
+                    modern elegance with a
+                    cozy, intimate atmosphere. The soothing lighting, stylish decor, and attentive staff create a
+                    comfortable space where
+                    you can relax and savor each moment.</p>
+            </div>
+            <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="" class="col-6 p-0 m-0">
+        </div>
+    </div>
+
+
+    <div class="about my-5">
+        <div class="row">
+            <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="" class="col-6 p-0 m-0">
+            <div class="col-6 pl-5 ">
+                <h2>Where Flavor Meets Ambiance: Location and Atmosphere</h2>
+                <p>We are honored to have received several accolades and positive reviews for our culinary prowess. Our
+                    commitment to
+                    excellence has earned us recognition in prestigious publications and the loyalty of our cherished
+                    patrons. However, our
+                    true measure of success lies in the smiles on our guests' faces and the joy we bring to their dining
+                    experience.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="about my-5">
+        <div class="row">
+            <div class="col-6 pl-5 ">
+                <h2>Nurturing the Planet: Sustainability and Ethical Practices</h2>
+                <p>Step into our restaurant, and you'll be greeted by an inviting ambiance that effortlessly blends
+                    modern elegance with a
+                    cozy, intimate atmosphere. The soothing lighting, stylish decor, and attentive staff create a
+                    comfortable space where
+                    you can relax and savor each moment.</p>
+            </div>
+            <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="" class="col-6 p-0 m-0">
+        </div>
+    </div>
+
+
+    <div class="about my-5">
+        <div class="row">
+            <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
+                alt="" class="col-6 p-0 m-0">
+            <div class="col-6 pl-5 ">
+                <h2>Embracing Community: Our Involvement</h2>
+                <p>Beyond our kitchen doors, we believe in giving back to the community that has embraced us. We
+                    actively participate in
+                    local initiatives, support charitable organizations, and contribute to sustainable practices,
+                    ensuring that we play our
+                    part in creating a better world.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="green-container pb-3">
+        <div class="ml-1 mb-5 row container">
+            <div class="col-6">
+
+                <h4>Foodie</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem labore dolor quidem, expedita
+                    praesentium hic impedit rem porro id ea. Recusandae magnam minima, fugiat at voluptatem nam
+                    laudantium provident consequuntur.</p>
+            </div>
+            <div class="col-6 pl-5">
+                <h4>Quick links</h4>
+                <a href="">Home</a>
+                <a href="">Menu</a>
+                <a href="">About</a>
+                <a href="">Contacts</a>
+            </div>
+
+        </div>
+        <div class="social-media text-center">
+            <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer-copyright text-center col-12">© 2020 Copyright:
+            <a href="/"> Foodie</a>
+        </div>
+    </footer>
+
+    <script src="js/new.js"></script>
+</body>
+
+</html>
