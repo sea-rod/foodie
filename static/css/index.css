@@ -180,3 +180,32 @@ hr {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
+
+#signup {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 20px;
+    overflow: hidden;
+}
+
+#signup>div.col-5.text-center.pt-5 {
+    background-color: #d9fcd8;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#signup a button {
+    border-radius: 20px;
+    border: 1px solid rgb(161, 161, 161);
+    width: 200px;
+}
+
+#signup a button:hover {
+    background-color: rgb(160, 191, 168);
+    transition: 0.5s;
+}
+
+#signup input {
+    margin: 10px 5px;
+    height: 35px;
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Foodie - Order your Favourite Food Now</title>
 
     {% load static %}
 
@@ -33,7 +33,7 @@
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start mr-5">
 
             <div class="navbar-nav ml-auto justify-content-start">
-                <a href="#" class="nav-item nav-link mx-4"><span>Home</span></a>
+                <a href="{% url 'home' %}" class="nav-item nav-link mx-4"><span>Home</span></a>
                 <a href="{% url 'menu' %}" class="nav-item nav-link mx-4"><span>Service</span></a>
                 <a href="#" class="nav-item nav-link mx-4"><span>About</span></a>
                 <a href="#" class="nav-item nav-link mx-4"><span>Contact</span></a>
@@ -62,6 +62,7 @@
         </div>
 
     </nav>
+    {% block content %}
     <div class="green-container">
         <div class="container ml-1 row">
             <div class="col-6 p-0">
@@ -117,6 +118,7 @@
             </div>
         </div>
     </div>
+    {% endblock content %}
 
 
 
