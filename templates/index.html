@@ -37,28 +37,32 @@
                 <a href="{% url 'menu' %}" class="nav-item nav-link mx-4"><span>Service</span></a>
                 <a href="#" class="nav-item nav-link mx-4"><span>About</span></a>
                 <a href="#" class="nav-item nav-link mx-4"><span>Contact</span></a>
-
-                <!-- <div class="nav-item dropdown col-6">
+                {% if user.is_authenticated %}
+                <div class="dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img
-                            sizes="21,12" src="" class="avatar" alt="Avatar">
-                        Username <b class="caret"></b></a>
-                    <div class="dropdown-menu" style="left:-20px">
+                            sizes="21,12"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT71xOBIcQUs2yi94FYFxVPd5llqJ_b7eN4rZC59SwW&s"
+                            class="avatar" alt="">
+                        {{ user.username }} <b class="caret"></b></a>
+                    <div class="dropdown-menu">
                         <a href="//{ url 'edit_profile' user.pk %}" class="dropdown-item"><i class="fa fa-user-o"></i>
                             Profile</a>
                         <a href="#" class="dropdown-item" onclick="cat_add()"><i class="fa fa-plus"></i> Add
                             Category</a>
                         <div class="divider dropdown-divider"></div>
-                        <a href="url 'logout' %}" class="dropdown-item"><i class=" fa fa-power-off"
+                        <a href="{ url 'logout' %}" class="dropdown-item"><i class=" fa fa-power-off"
                                 style="font-size: large;"></i>
                             Logout</a>
                     </div>
-                </div> -->
+                </div>
             </div>
-            <div class="ml-auto" style="display: inline-block;">
-                <a href="url 'signup' %}"><button class="btn" id="signup"
-                        style="border: 1px solid black;">Signup</button></a>
-                <a href="{ url 'login' %}"><button class="btn btn-success">Login</button></a>
-            </div>
+            {% else %}
+        </div>
+        <div class="ml-auto" style="display: inline-block;">
+            <a href="{% url 'signup' %}"><button class="btn" style="border: 1px solid black;">Signup</button></a>
+            <a href="{% url 'login' %}"><button class="btn btn-success">Login</button></a>
+        </div>
+        {% endif %}
         </div>
 
     </nav>
