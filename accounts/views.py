@@ -1,8 +1,8 @@
 from django.contrib.auth.views import LoginView
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth import get_user_model
-from .forms import CustomUserCreationForm, CustomLoginForm
+from .forms import CustomUserCreationForm, CustomLoginForm, CustomChangeUserForm
 
 
 class SignupView(CreateView):
@@ -15,3 +15,10 @@ class SignupView(CreateView):
 class CustomLoginView(LoginView):
     form_class = CustomLoginForm
     success_url = reverse_lazy("home")
+
+
+class ChangeUserView(UpdateView):
+    model = get_user_model()
+    template_name = "registration/changeUser.html"
+    form_class = CustomChangeUserForm
+    # fields = ["username", "email", "contact_no"]

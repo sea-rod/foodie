@@ -39,10 +39,10 @@
                 <a href="#" class="nav-item nav-link mx-4"><span>Contact</span></a>
                 {% if user.is_authenticated %}
                 <div class="dropdown">
-                    <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img
-                            sizes="21,12"
+                    <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">
+                        <!-- <img sizes="21,12"
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT71xOBIcQUs2yi94FYFxVPd5llqJ_b7eN4rZC59SwW&s"
-                            class="avatar" alt="">
+                            class="avatar" alt=""> -->
                         {{ user.username }} <b class="caret"></b></a>
                     <div class="dropdown-menu">
                         <a href="//{ url 'edit_profile' user.pk %}" class="dropdown-item"><i class="fa fa-user-o"></i>
@@ -50,7 +50,7 @@
                         <a href="#" class="dropdown-item" onclick="cat_add()"><i class="fa fa-plus"></i> Add
                             Category</a>
                         <div class="divider dropdown-divider"></div>
-                        <a href="{ url 'logout' %}" class="dropdown-item"><i class=" fa fa-power-off"
+                        <a href="{% url 'logout' %}" class="dropdown-item"><i class=" fa fa-power-off"
                                 style="font-size: large;"></i>
                             Logout</a>
                     </div>
@@ -126,8 +126,8 @@
 
 
 
-    <footer class="green-container pb-3">
-        <div class="ml-1 mb-5 row container">
+    <footer class="green-container mt-5">
+        <div class="ml-1 mb-5 mt-auto row container">
             <div class="col-6">
 
                 <h4>Foodie</h4>

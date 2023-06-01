@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+<div style="height: 100%;width: 100%;" class="h-100 d-inline-block">
+
+    <div id="settings" class="pt-5">
+        <h1 class="text-center mb-5">Settings</h1>
+        {% for field, errors in form.errors.items %}
+        {% for error in errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+        {% endfor %}
+        <form action="" method="post" class="text-center mt-5">
+            {% csrf_token %}
+            {% for field in form %}
+            {{field}}
+            {% endfor %}
+            <!-- <input type="text" placeholder="username" class="col-7">
+                <input type="email" name="" id="" class="col-7" placeholder="email">
+                <input type="tel" placeholder="Contact no." class="col-7">
+                <input type="password" name="" id="" placeholder="password" class="col-7">
+                <input type="password" name="" id="" placeholder="confirm password" class="col-7"> -->
+            <br>
+            <input type="submit" value="Save" class="btn btn-success col-4 mb-5"
+                style="border-radius: 20px;height: 40px;">
+            <a href="{% url 'home' %}" class="btn btn-danger col-4 mb-5"> Cancel</a>
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}

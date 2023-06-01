@@ -2,9 +2,10 @@ from django.contrib.auth.forms import (
     UserCreationForm,
     UsernameField,
     AuthenticationForm,
+    UserChangeForm,
 )
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth import password_validation
+from django.contrib.auth import password_validation, get_user_model
 from django import forms
 from .models import CustomUser
 
@@ -66,7 +67,7 @@ class CustomUserCreationForm(UserCreationForm):
     )
 
     class Meta:
-        model = CustomUser
+        model = get_user_model()
         fields = ("username", "email", "contact_no")
 
 
@@ -91,3 +92,19 @@ class CustomLoginForm(AuthenticationForm):
             }
         ),
     )
+
+
+class CustomChangeUserForm(UserChangeForm):
+    username = UsernameField(
+        widget=forms.TextInput(
+            attrs={
+                "autofocus": True,
+                "placeholder": "Username",
+                "class": "col-6",
+            }
+        )
+    )
+
+    class Meta:
+        model = get_user_model()
+        fields = ["username", "email", "contact_no"]
