@@ -229,7 +229,7 @@ hr {
 }
 
 #settings {
-    background-color: rgb(225, 116, 116);
+    /* background-color: rgb(225, 116, 116); */
     /* height: 90%; */
     width: 75%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 20px;
@@ -244,6 +244,6 @@ hr {
 }
 
 #settings input {
-    margin: 10px 40px;
+    margin: 0px 40px 20px;
     /* width: 25%; */
 }

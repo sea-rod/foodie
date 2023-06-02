@@ -45,10 +45,10 @@
                             class="avatar" alt=""> -->
                         {{ user.username }} <b class="caret"></b></a>
                     <div class="dropdown-menu">
-                        <a href="//{ url 'edit_profile' user.pk %}" class="dropdown-item"><i class="fa fa-user-o"></i>
+                        <a href="{% url 'profile' user.pk %}" class="dropdown-item"><i class="fa fa-user-o"></i>
                             Profile</a>
-                        <a href="#" class="dropdown-item" onclick="cat_add()"><i class="fa fa-plus"></i> Add
-                            Category</a>
+                        <a href="{% url 'address_settings' %}" class="dropdown-item"><i class="fa fa-plus"></i>
+                            Settings{{ address_id }}</a>
                         <div class="divider dropdown-divider"></div>
                         <a href="{% url 'logout' %}" class="dropdown-item"><i class=" fa fa-power-off"
                                 style="font-size: large;"></i>

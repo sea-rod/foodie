@@ -7,7 +7,7 @@ from django.contrib.auth.forms import (
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import password_validation, get_user_model
 from django import forms
-from .models import CustomUser
+from .models import CustomUser, CustomerAddresss
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -105,6 +105,57 @@ class CustomChangeUserForm(UserChangeForm):
         )
     )
 
+    email = forms.EmailField(
+        widget=forms.EmailInput(
+            attrs={
+                "autofocus": True,
+                "placeholder": "Email",
+                "class": "col-6",
+            }
+        )
+    )
+
+    contact_no = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={
+                "autofocus": True,
+                "placeholder": "Contact No.",
+                "class": "col-6",
+            }
+        )
+    )
+
     class Meta:
         model = get_user_model()
         fields = ["username", "email", "contact_no"]
+
+
+class CustomerAddressForm(forms.ModelForm):
+    pincode = forms.IntegerField(
+        widget=forms.NumberInput(
+            attrs={
+                "placeholder": "pincode",
+                "max": 999999,
+            }
+        )
+    )
+
+    ward = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "ward",
+            }
+        )
+    )
+
+    village_city = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "village/city",
+            }
+        )
+    )
+
+    class Meta:
+        model = CustomerAddresss
+        fields = ["ward", "village_city", "pincode"]

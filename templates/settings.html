@@ -3,7 +3,7 @@
 <div style="height: 100%;width: 100%;" class="h-100 d-inline-block">
 
     <div id="settings" class="pt-5">
-        <h1 class="text-center mb-5">Settings</h1>
+        <h1 class="text-center mb-5">Address Settings</h1>
         {% for field, errors in form.errors.items %}
         {% for error in errors %}
         <p>{{ error }}</p>
@@ -12,6 +12,7 @@
         <form action="" method="post" class="text-center mt-5">
             {% csrf_token %}
             {% for field in form %}
+            <span class="ml-5" style="font-size: 12px;text-align: left;margin-bottom: 0;">{{field.label }}</span>
             {{field}}
             {% endfor %}
             {% for field in form2 %}
