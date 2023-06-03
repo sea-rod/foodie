@@ -1,13 +1,11 @@
-from typing import Any
 from django.contrib.auth.views import LoginView
-from django.forms.models import BaseModelForm
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
-from django.views.generic.base import TemplateResponseMixin
-from django.views.generic import CreateView, UpdateView, View
+from django.contrib.auth.decorators import login_required
+from django.views.generic import CreateView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth import get_user_model, authenticate, login
-from .models import CustomerAddresss
+from .models import CustomerAddress
 from .forms import (
     CustomUserCreationForm,
     CustomLoginForm,
@@ -32,9 +30,6 @@ class SignupView(CreateView):
         )
         print(user)
         login(self.request, user)
-        CustomerAddresss.objects.create(
-            user=get_user_model().objects.get(pk=self.object.id)
-        )
         return valid
 
 
@@ -50,8 +45,9 @@ class ChangeUserView(UpdateView):
     # fields = ["username", "email", "contact_no"]
 
 
+@login_required()
 def AddressUpdateView(request: HttpRequest):
-    address = CustomerAddresss.objects.get(user=request.user)
+    address = CustomerAddress.objects.get(user=request.user)
     if request.method == "POST":
         address.pincode = request.POST["pincode"]
         address.village_city = request.POST["village_city"]
@@ -60,9 +56,12 @@ def AddressUpdateView(request: HttpRequest):
         return redirect("home")
 
     dic = {
+        "house_no": address.house_no,
         "pincode": address.pincode,
-        "village_city": address.village_city,
         "ward": address.ward,
+        "village_city": address.village_city,
+        "taluka": address.taluka,
+        "landmark": address.landmark,
     }
 
     context = {"form": CustomerAddressForm(initial=dic)}

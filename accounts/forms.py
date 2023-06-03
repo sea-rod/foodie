@@ -7,7 +7,7 @@ from django.contrib.auth.forms import (
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth import password_validation, get_user_model
 from django import forms
-from .models import CustomUser, CustomerAddresss
+from .models import CustomUser, CustomerAddress
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -139,6 +139,14 @@ class CustomerAddressForm(forms.ModelForm):
             }
         )
     )
+    house_no = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "House.No.",
+                "maxlength": "6",
+            }
+        )
+    )
 
     ward = forms.CharField(
         widget=forms.TextInput(
@@ -156,6 +164,21 @@ class CustomerAddressForm(forms.ModelForm):
         )
     )
 
+    taluka = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "taluka",
+            }
+        )
+    )
+    landmark = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "landmark",
+            }
+        )
+    )
+
     class Meta:
-        model = CustomerAddresss
-        fields = ["ward", "village_city", "pincode"]
+        model = CustomerAddress
+        fields = ["house_no", "ward", "village_city", "taluka", "landmark", "pincode"]
