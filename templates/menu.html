@@ -19,42 +19,21 @@
 
 
 <hr>
+{% for category in food_category %}
 <div id="starters">
-    <h3 class="ml-3">Starters</h3>
-    <div class="row ml-1 mt-4">
-        <div class="col-2">
-            <img src="https://img.freepik.com/free-photo/close-up-food-lover-taking-pictures-meal_23-2149286449.jpg?w=740&t=st=1684519584~exp=1684520184~hmac=18f1321e5b9b3105419e0efb5084ec19ef83e6203243b8959730546d684ecfbd"
-                alt="food image">
+    <h3 class="ml-3">{{ category.name }}</h3>
+    <div class="row ml-1  mt-4 pr-0">
+        {% for food in category.food_set.all %}
+        <div class="col-2 ml-4 mb-5">
+            <img src="{{ food.item_img.url }}" alt="food image">
             <div class="row">
-                <p class="col-12 ml-3 my-0"> Pizza</p>
-                <p class="col-12 text-success ml-3">Rs 120</p>
+                <p class="col-12 ml-3 my-0">{{ food.name }}</p>
+                <p class="col-12 text-success ml-3">Rs {{ food.price|floatformat:2 }} - 1{{ food.plate_pieces }}</p>
                 <button class="col-12 ml-3 btn btn-success">+Add to Cart</button>
             </div>
         </div>
-        <div class="col-2">
-            <img src="{% static 'img/download (1).jpg' %}" alt="food image">
-            <div class="row">
-                <p class="col-12 ml-3 my-0"> Fried Rice</p>
-                <p class="col-12 text-success ml-3">Rs 120</p>
-                <button class="col-12 ml-3 btn btn-success">+Add to Cart</button>
-            </div>
-        </div>
-        <div class="col-2">
-            <img src="{% static 'img/download (2).jpg' %}" alt="food image">
-            <div class="row">
-                <p class="col-12 ml-3 my-0"> French Fries</p>
-                <p class="col-12 text-success ml-3">Rs 120</p>
-                <button class="col-12 ml-3 btn btn-success">+Add to Cart</button>
-            </div>
-        </div>
-        <div class="col-2">
-            <img src="{% static 'img/download.jpg' %}" alt="food image">
-            <div class="row">
-                <p class="col-12 ml-3 my-0"> Chicken Lollipop</p>
-                <p class="col-12 text-success ml-3">Rs 120</p>
-                <button class="col-12 ml-3 btn btn-success">+Add to Cart</button>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
+{% endfor %}
 {% endblock content %}
