@@ -29,3 +29,36 @@ window.addEventListener('scroll', handleDivAppearance);
 
 // Initially, check if any divs are already in the viewport
 handleDivAppearance();
+
+
+// for adding items to list 
+function add(food_id) {
+    // var searchText = document.getElementById("search-input").value;
+    document.getElementById("blur").classList.add("blur-background");
+    loadDoc()
+    var input = document.getElementsByName("food")[0]
+    console.log(input)
+    input.value = food_id;
+}
+
+
+function hide() {
+  document.getElementById("blur").classList.remove("blur-background");
+  document.getElementById("demo").style.visibility = "hidden"
+}
+
+
+  function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      var demo = document.getElementById("demo");
+      demo.innerHTML = this.responseText;
+      demo.style.visibility = "visible";
+    }
+  };
+
+  xhttp.open("GET", "/cart/add", false);
+  xhttp.send();
+
+}
