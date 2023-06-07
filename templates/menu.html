@@ -17,23 +17,56 @@
 </div>
 
 
+<script>
+    function add(food_id) {
+        // var searchText = document.getElementById("search-input").value;
 
+
+        document.getElementById("blur").classList.add("blur-background");
+        loadDoc()
+        var input = document.getElementsByName("food")[0]
+        console.log(input)
+        input.value = food_id;
+    }
+    function hide() {
+        document.getElementById("blur").classList.remove("blur-background");
+        document.getElementById("demo").style.visibility = "hidden"
+    }
+
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var demo = document.getElementById("demo");
+                demo.innerHTML = this.responseText;
+                demo.style.visibility = "visible";
+
+            }
+        };
+        xhttp.open("GET", "/cart/add", false);
+        xhttp.send();
+    }
+</script>
 <hr>
-{% for category in food_category %}
-<div id="starters">
-    <h3 class="ml-3">{{ category.name }}</h3>
-    <div class="row ml-1  mt-4 pr-0">
-        {% for food in category.food_set.all %}
-        <div class="col-2 ml-4 mb-5">
-            <img src="{{ food.item_img.url }}" alt="food image">
-            <div class="row">
-                <p class="col-12 ml-3 my-0">{{ food.name }}</p>
-                <p class="col-12 text-success ml-3">Rs {{ food.price|floatformat:2 }} - 1{{ food.plate_pieces }}</p>
-                <button class="col-12 ml-3 btn btn-success">+Add to Cart</button>
+<div style="visibility: hidden;" id="demo"></div>
+<div id="blur">
+
+    {% for category in food_category %}
+    <div id="starters">
+        <h3 class="ml-3">{{ category.name }}</h3>
+        <div class="row ml-1  mt-4 pr-0">
+            {% for food in category.food_set.all %}
+            <div class="col-2 ml-4 mb-5">
+                <img src="{{ food.item_img.url }}" alt="food image">
+                <div class="row">
+                    <p class="col-12 ml-3 my-0">{{ food.name }}</p>
+                    <p class="col-12 text-success ml-3">Rs {{ food.price|floatformat:2 }} - 1{{ food.plate_pieces }}</p>
+                    <button class="col-12 ml-3 btn btn-success" onclick="add({{food.id}})">+Add to Cart</button>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </div>
-{% endfor %}
 {% endblock content %}

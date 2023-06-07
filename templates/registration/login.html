@@ -22,7 +22,7 @@
 
     <div id="login">
         <h1 class="text-center mb-5">Login</h1>
-        <form action="" method="post">
+        <form action="{% url 'login' %}" method="post">
             <div class="row">
                 {% csrf_token %}
                 {% for field in form %}
@@ -32,10 +32,6 @@
                 </label>
                 {{ field }}
                 {% endfor %}
-                <!-- <label class="col-8" for="email">Email</label>
-                <input class="col-12" type="text" name="email" placeholder="email" autofocus>
-                <label class="col-12" for="pass">Password</label>
-                <input class="col-12" type="password" name="pass" placeholder="password"> -->
                 <a href="#" class="col-12 mb-5">Forgot password?</a>
             </div>
             <input type="submit" value="Login" class="btn btn-success">
