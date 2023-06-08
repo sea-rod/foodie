@@ -257,7 +257,7 @@ hr {
 }
 
 #add {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     background-color: rgb(120, 120, 120);
@@ -265,4 +265,5 @@ hr {
     transform: translate(-50%, -50%);
     z-index: 1;
     border-radius: 20px;
+    width: 25%;
 }
