@@ -3,7 +3,7 @@
         {% csrf_token %}
         <input type="text" name="food" style="visibility: hidden;" class="col-12">
         <label class=" text-white col-12 ">Enter the Quantity</label>
-        <input type=" integer" placeholder="Quantity" name="quantity" class="col-12 ml-3">
+        <input type="number" placeholder="Quantity" name="quantity" class="col-12 ml-3">
         <br>
         <input type="submit" value="add" class="btn btn-success ml-3 mt-3" onclick="hide()">
         <input type="button" value="cancel" class="btn btn-danger mt-3" onclick="hide()">

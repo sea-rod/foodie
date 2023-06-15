@@ -36,7 +36,7 @@
                 <a href="{% url 'home' %}" class="nav-item nav-link mx-4"><span>Home</span></a>
                 <a href="{% url 'menu' %}" class="nav-item nav-link mx-4"><span>Service</span></a>
                 <a href="#" class="nav-item nav-link mx-4"><span>About</span></a>
-                <a href="#" class="nav-item nav-link mx-4"><span>Contact</span></a>
+                <a href="{% url 'list_cart' %}" class="nav-item nav-link mx-4"><span>Cart</span></a>
                 {% if user.is_authenticated %}
                 <div class="dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action">

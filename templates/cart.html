@@ -1,89 +1,44 @@
-<!DOCTYPE html>
-<html>
+{% extends 'index.html' %}
+{% load static %}
 
-<head>
-    <title>Shopping Cart</title>
-    <style>
-        /* CSS styles for the shopping cart */
-        body {
-            background-color: #f1f8f6;
-            font-family: Arial, sans-serif;
-        }
-
-        h1 {
-            text-align: center;
-            padding: 20px 0;
-            color: #333;
-        }
-
-        .cart {
-            background-color: #fff;
-            margin: 0 auto;
-            padding: 20px;
-            max-width: 500px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .cart-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .cart-item img {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .cart-item span {
-            flex: 1;
-        }
-
-        .cart-total {
-            margin-top: 10px;
-            font-weight: bold;
-            text-align: right;
-        }
-
-        .buy-button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            text-align: center;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-
-<body>
+{% block content %}
+<div class="cart">
     <h1>Shopping Cart</h1>
-    {% load static %}
-    <div class="cart">
-        {% for item in cart_list.items_set.all %}
-        <div class="cart-item">
-            <img src="{{ item.food_id.item_img.url }}" alt="Product 1">
-            <span>{{item.food_id.name}}</span>
-            <span>Rs {{item.food_id.price}}</span>
-        </div>
-        {% endfor %}
+    {% if cart_list.items_set.all %}
+    {% for item in cart_list.items_set.all %}
+    <div class="cart-item">
+        <img src="{{ item.food_id.item_img.url }}" alt="Product 1">
+        <span>{{item.food_id.name}}</span>
+        <span>Rs {{item.food_id.price}}</span>
+        <!-- <a href="{% url 'delete_cart' item.pk %}">
+                <button class="delete-button">x</button>
 
+            </a> -->
+        <form action="{%url 'delete_cart' item.pk %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="delete-button">x</button>
 
-        <div class="cart-total">
-            Total: Rs {{cart_list.total_price|floatformat:2}}
-        </div>
+            <!-- <button class="btn btn- ml-2" type="submit">Update</button> -->
+        </form>
+    </div>
+    {% endfor %}
 
-        <button class="buy-button">Buy Now</button>
+    <div class="cart-total">
+        Total: Rs {{cart_list.total_price|floatformat:2}}
     </div>
 
-    <script>
+    <button class="buy-button">Buy Now</button>
+    {% else %}
+    <div class="cart-item">
+        <p>Your Cart is Empty</p>
+        <a href="{% url 'menu' %}" class="btn btn-success  ml-auto">Add Items</a>
+    </div>
+    {% endif %}
+</div>
+
+<script>
     // JavaScript code to handle interactions and calculations
     // You can add functionality such as adding/removing items, updating quantities, etc.
-    </script>
-</body>
-
-</html>
+</script>
+{% endblock %}
