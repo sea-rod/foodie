@@ -9,9 +9,13 @@
         <h2 class="ml-3">Menu</h2>
         <div class="ml-auto">
 
-            <div style="display: inline-block;border: 1px solid rgb(168, 168, 168);">
-                <input type="text" placeholder="search">
-                <img src="{% static 'img/490px-Magnifying_glass_icon.svg.png' %}" alt="search icon" onclick="h()">
+            <div class="m-0 p-0" style="display: inline-block;border: 1px solid rgb(168, 168, 168);">
+                <form action="" method="get">
+                    <input type="search" name="search" placeholder="search">
+                    <button type="submit" class="btn p-0 m-0">
+                        <img src="{% static 'img/490px-Magnifying_glass_icon.svg.png' %}" alt="search icon">
+                    </button>
+                </form>
             </div>
         </div>
     </div>
@@ -39,5 +43,21 @@
         </div>
     </div>
     {% endfor %}
+    <div id="starters">
+        <h3 class="ml-3">{{ search_head }}</h3>
+        <div class="row ml-1  mt-4 pr-0">
+            {% for food in food_search %}
+            <div class="col-2 ml-4 mb-5">
+                <img src="{{ food.item_img.url }}" alt="food image">
+                <div class="row">
+                    <p class="col-12 ml-3 my-0">{{ food.name }}</p>
+                    <p class="col-12 text-success ml-3">Rs {{ food.price|floatformat:2 }} - 1{{ food.plate_pieces }}</p>
+                    <button class="col-12 ml-3 btn btn-success" onclick="add({{ food.id }})">+Add to Cart</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <p>{{ search_cat }}</p>
 </div>
 {% endblock content %}
