@@ -48,7 +48,7 @@ div.about:nth-child(even) {
     width: 100%;
 }
 
-.col-6 h1 {
+.col-lg-6 h1 {
     font-size: 80px;
     line-height: 80px;
 }
@@ -270,7 +270,7 @@ hr {
 
 /*  cart   */
 
-h1 {
+.cart h1 {
     text-align: center;
     padding: 20px 0;
     color: #333;
@@ -331,4 +331,21 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+
+@media (max-width: 991px) {
+    div.about:nth-child(odd) .row {
+        flex-direction: column-reverse;
+    }
+
+    .green-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .col-lg-6 h1 {
+        font-size: xx-large;
+        line-height: normal;
+    }
 }
