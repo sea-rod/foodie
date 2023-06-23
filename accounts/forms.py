@@ -16,7 +16,7 @@ class CustomUserCreationForm(UserCreationForm):
             attrs={
                 "autofocus": True,
                 "placeholder": "Username",
-                "class": "col-7",
+                "class": "col-lg-7 col-12",
             }
         )
     )
@@ -26,7 +26,7 @@ class CustomUserCreationForm(UserCreationForm):
         widget=forms.EmailInput(
             attrs={
                 "placeholder": "Email",
-                "class": "col-7",
+                "class": "col-lg-7 col-12",
             }
         ),
     )
@@ -36,7 +36,7 @@ class CustomUserCreationForm(UserCreationForm):
         widget=forms.NumberInput(
             attrs={
                 "placeholder": "Contact no",
-                "class": "col-7",
+                "class": "col-lg-7 col-12",
             }
         ),
     )
@@ -47,7 +47,7 @@ class CustomUserCreationForm(UserCreationForm):
         widget=forms.PasswordInput(
             attrs={
                 "autocomplete": "new-password",
-                "class": "col-7",
+                "class": "col-lg-7 col-12",
                 "placeholder": "Password",
             }
         ),
@@ -58,7 +58,7 @@ class CustomUserCreationForm(UserCreationForm):
         widget=forms.PasswordInput(
             attrs={
                 "autocomplete": "new-password",
-                "class": "col-7",
+                "class": "col-lg-7 col-12",
                 "placeholder": "Confirm Password",
             }
         ),
@@ -100,7 +100,7 @@ class CustomChangeUserForm(UserChangeForm):
             attrs={
                 "autofocus": True,
                 "placeholder": "Username",
-                "class": "col-6",
+                "class": "col-lg-6 col-12",
             }
         )
     )
@@ -110,7 +110,7 @@ class CustomChangeUserForm(UserChangeForm):
             attrs={
                 "autofocus": True,
                 "placeholder": "Email",
-                "class": "col-6",
+                "class": "col-lg-6 col-12",
             }
         )
     )
@@ -120,7 +120,7 @@ class CustomChangeUserForm(UserChangeForm):
             attrs={
                 "autofocus": True,
                 "placeholder": "Contact No.",
-                "class": "col-6",
+                "class": "col-lg-6 col-12",
             }
         )
     )
@@ -136,6 +136,7 @@ class CustomerAddressForm(forms.ModelForm):
             attrs={
                 "placeholder": "pincode",
                 "max": 999999,
+                "class": "col-12 col-lg-6",
             }
         )
     )
@@ -144,6 +145,7 @@ class CustomerAddressForm(forms.ModelForm):
             attrs={
                 "placeholder": "House.No.",
                 "maxlength": "6",
+                "class": "col-12 col-lg-6",
             }
         )
     )
@@ -152,6 +154,7 @@ class CustomerAddressForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "ward",
+                "class": "col-12 col-lg-6",
             }
         )
     )
@@ -160,6 +163,7 @@ class CustomerAddressForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "village/city",
+                "class": "col-12 col-lg-6",
             }
         )
     )
@@ -168,6 +172,7 @@ class CustomerAddressForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "taluka",
+                "class": "col-12 col-lg-6",
             }
         )
     )
@@ -175,6 +180,7 @@ class CustomerAddressForm(forms.ModelForm):
         widget=forms.TextInput(
             attrs={
                 "placeholder": "landmark",
+                "class": "col-12 col-lg-6",
             }
         )
     )

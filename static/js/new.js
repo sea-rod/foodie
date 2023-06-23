@@ -62,3 +62,16 @@ function hide() {
   xhttp.send();
 
 }
+
+
+var body = document.getElementsByTagName("body")[0];
+body.addEventListener("click", function(event) {
+  var demo = document.getElementById("demo");
+  if (
+    !event.target.closest("#add, #add-btn") &&
+    getComputedStyle(demo).visibility === "visible"
+  ) {
+    console.log(event.target.id);
+    hide();
+  }
+});

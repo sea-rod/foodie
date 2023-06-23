@@ -90,7 +90,6 @@ h2 {
 /* login */
 
 #login {
-    width: 30%;
     margin: 100px auto;
     background-color: rgb(221, 255, 221);
     padding: 50px 80px;
@@ -148,7 +147,7 @@ hr {
 
 /* starters list */
 
-#starters div div.col-2 {
+#starters div div.col-lg-2 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 20px;
     border-radius: 30px;
     /* height: 250px; */
@@ -158,7 +157,7 @@ hr {
     flex-direction: column;
 }
 
-#starters div div.col-2:hover {
+#starters div div.col-lg-2:hover {
     box-shadow: rgba(0, 0, 0, 0.568) 0px 15px 20px;
     transition: 0.3s;
 }
@@ -213,7 +212,7 @@ hr {
     overflow: hidden;
 }
 
-#signup>div.col-5.text-center.pt-5 {
+#signup>div.col-lg-5.text-center.pt-5 {
     background-color: #d9fcd8;
     justify-content: center;
     display: flex;
@@ -347,5 +346,108 @@ hr {
     .col-lg-6 h1 {
         font-size: xx-large;
         line-height: normal;
+    }
+
+    /*  login */
+    #login {
+        margin: 30% auto;
+        padding: 20px 50px;
+    }
+
+    /* menu */
+    #menu,
+    #starters {
+        padding: 10px;
+    }
+
+    #starters div div.col-lg-2 {
+        border-radius: 0px;
+        /* height: 250px; */
+        z-index: 2px;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #starters div {
+        display: flex;
+        /* justify-content: space-between; */
+    }
+
+    #starters img {
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 50%;
+        border-radius: 0;
+        overflow: hidden;
+    }
+
+    #starters button {
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+        height: 25%;
+        display: flex;
+        margin-top: auto;
+        margin-bottom: 20px;
+        border: none;
+    }
+
+    #starters div.row {
+        position: relative;
+        width: 100%;
+    }
+
+    hr {
+        margin: 0px 20px;
+        border-color: rgb(129, 129, 129);
+    }
+
+    /* add */
+    #add {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        background-color: rgb(120, 120, 120);
+        padding: 50px;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    #settings {
+        /* background-color: rgb(225, 116, 116); */
+        /* height: 90%; */
+        width: 90%;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 15px 20px;
+        margin: 10% auto;
+        border-radius: 20px;
+    }
+
+    #settings form {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 20px;
+    }
+
+    #settings input {
+        margin: 10px auto;
+        /* width: 25%; */
+    }
+
+    .about {
+        padding: 50px 30px;
+        height: max-content;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    div.about:nth-child(even) {
+        padding: 50px 30px;
+        margin-top: 20px;
+        height: max-content;
     }
 }

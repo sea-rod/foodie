@@ -49,9 +49,13 @@ class ChangeUserView(UpdateView):
 def AddressUpdateView(request: HttpRequest):
     address = CustomerAddress.objects.get(user=request.user)
     if request.method == "POST":
+        address.house_no = request.POST["house_no"]
+
         address.pincode = request.POST["pincode"]
-        address.village_city = request.POST["village_city"]
         address.ward = request.POST["ward"]
+        address.village_city = request.POST["village_city"]
+        address.taluka = request.POST["taluka"]
+        address.landmark = request.POST["landmark"]
         address.save()
         return redirect("home")
 

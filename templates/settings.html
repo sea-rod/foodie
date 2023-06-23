@@ -9,22 +9,17 @@
         <p>{{ error }}</p>
         {% endfor %}
         {% endfor %}
-        <form action="" method="post" class="text-center mt-5">
+        <form action="" method="post" class="text-center mt-5 mb-lg-5">
             {% csrf_token %}
             {% for field in form %}
-            <span class="ml-5" style="font-size: 12px;text-align: left;margin-bottom: 0;">{{field.label }}</span>
+            <span class="ml-lg-5" style="font-size: 12px;text-align: left;margin-bottom: 0;">{{field.label }}</span>
             {{field}}
             {% endfor %}
             {% for field in form2 %}
             {{field}}
             {% endfor %}
-            <!-- <input type="text" placeholder="username" class="col-7">
-                <input type="email" name="" id="" class="col-7" placeholder="email">
-                <input type="tel" placeholder="Contact no." class="col-7">
-                <input type="password" name="" id="" placeholder="password" class="col-7">
-                <input type="password" name="" id="" placeholder="confirm password" class="col-7"> -->
             <br>
-            <input type="submit" value="Save" class="btn btn-success col-4 mb-5"
+            <input type="submit" value="Save" class="btn btn-success col-lg-4 col-12 mb-5"
                 style="border-radius: 20px;height: 40px;">
         </form>
 

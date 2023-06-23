@@ -20,13 +20,13 @@
 
 <body>
 
-    <div id="signup" class="container mt-5 row mx-auto p-0  ">
-        <div class="col-5 text-center pt-5 px-5">
+    <div id="signup" class="container mt-lg-5 row mx-auto p-0  ">
+        <div class="col-12 col-lg-5 text-center pt-5 px-5">
             <h2>Welcome Back!</h2>
             <p>To keep connected with us please login with your personal info</p>
-            <a href="#"><button class="btn mt-3">SignIn</button></a>
+            <a href="#"><button class="btn mt-lg-3 my-3">SignIn</button></a>
         </div>
-        <div class="col-7 pt-5" style="background-color: rgb(243, 243, 243);">
+        <div class="col-lg-7 col-12 pt-5" style="background-color: rgb(243, 243, 243);">
             <h1 class="text-center mb-5">Create Account</h1>
             {% for field, errors in form.errors.items %}
             {% for error in errors %}
@@ -44,7 +44,7 @@
                 <input type="password" name="" id="" placeholder="password" class="col-7">
                 <input type="password" name="" id="" placeholder="confirm password" class="col-7"> -->
                 <br>
-                <input type="submit" value="SignUp" class="btn btn-success col-4 mb-5"
+                <input type="submit" value="SignUp" class="btn btn-success col-12 col-lg-4 mb-5"
                     style="border-radius: 20px;height: 40px;">
 
             </form>
