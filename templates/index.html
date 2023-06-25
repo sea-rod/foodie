@@ -2,10 +2,20 @@
 <html lang="en">
 
 <head>
+    {% block meta %}
+    {% endblock meta %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie - Order your Favourite Food Now</title>
+    <meta name="description"
+        content="Foodie is the ultimate destination for food lovers looking to order their favorite meals and book tables in a formal setting. Explore our premium beverages, catering services, and appetizers to tantalize your taste buds.">
+
+    <title>
+        {% block title %}
+        Foodie - Order your Favorite Food Online | Restaurant Website
+        {% endblock title %}
+    </title>
+
 
     {% load static %}
 
@@ -82,7 +92,7 @@
             </div>
             <img class="col-lg-6 col-12"
                 src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000"
-                alt="Food image">
+                alt="Delicious chicken wings with barbecue sauce">
         </div>
     </div>
     <div class="container mt-5">

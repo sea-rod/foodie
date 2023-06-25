@@ -1,12 +1,12 @@
 from typing import Any, Dict
 from django.http import HttpRequest, HttpResponse
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.shortcuts import render
 from .models import FoodCategory, Food
 
 
-def index(request):
-    return render(request, "index.html")
+class Index(TemplateView):
+    template_name = "index.html"
 
 
 class Menu(ListView):
@@ -36,5 +36,5 @@ class Menu(ListView):
         return super().get_context_data(**kwargs)
 
 
-def about(request):
-    return render(request, "about.html")
+class About(TemplateView):
+    template_name = "about.html"

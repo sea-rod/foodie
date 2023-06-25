@@ -1,6 +1,18 @@
 {% extends 'index.html' %}
 {% load static %}
 
+{% block meta %}
+<meta name="description"
+    content="Restaurant food menu for Foodie. Explore our delicious menu items and place your order online.">
+<meta name="keywords" content="Foodie, restaurant, food, menu, order online, cuisine">
+
+{% endblock meta %}
+
+
+{% block title %}
+Foodie - Restaurant Food Menu
+{% endblock title %}
+
 {% block content %}
 <script src="{% static 'js/new.js' %}"></script>
 <div id="menu">
@@ -8,8 +20,6 @@
 
         <h2 class="ml-lg-3">Menu</h2>
         <div class="ml-auto">
-
-            <!-- <div class="m-0 p-0" style="display: inline-block;border: 1px solid rgb(168, 168, 168);"> -->
             <form class="form" method="get" action="">
                 <label for="search">
                     <input class="input" type="text" required="" placeholder="Search" id="search" name="search">
@@ -33,7 +43,6 @@
                     </button>
                 </label>
             </form>
-            <!-- </div> -->
         </div>
     </div>
 </div>
@@ -49,7 +58,7 @@
         <div class="row ml-lg-1  mt-4 pr-0">
             {% for food in category.food_set.all %}
             <div class="col-lg-2 col-12 ml-lg-4 mb-5 pr-0">
-                <img src="{{ food.item_img.url }}" alt="food image">
+                <img src="{{ food.item_img.url }}" alt="Food image - {{ food.name }}">
 
                 <div class="row pl-3 pl-lg-0">
                     <div class="row col-8 col-lg-12">
@@ -72,7 +81,7 @@
         <div class="row ml-1  mt-4 pr-0">
             {% for food in food_search %}
             <div class="col-lg-2 col-12 ml-lg-4 mb-5 pr-0">
-                <img src="{{ food.item_img.url }}" alt="food image">
+                <img src="{{ food.item_img.url }}" alt="Food image - {{ food.name }}">
 
                 <div class="row pl-3 pl-lg-0">
                     <div class="row col-8 col-lg-12">
@@ -89,6 +98,5 @@
             {% endfor %}
         </div>
     </div>
-    <p>{{ search_cat }}</p>
 </div>
 {% endblock content %}

@@ -31,8 +31,18 @@ class UserTest(TestCase):
         if flag:
             response = self.client.get(reverse_lazy("home"))
             self.assertEqual(response.status_code, 200)
+
             self.assertContains(response, "test123")
             self.assertTemplateUsed("index.html")
+
+    def test_user_profile(self):
+        self.user.email = "test123@gmail.com"
+        self.user.save()
+        reponse = self.client.get(reverse_lazy("profile", kwargs={"pk": self.user.pk}))
+        self.assertAlmostEqual("test123", reponse.context["form"]["username"].value())
+        self.assertAlmostEqual(
+            "test123@gmail.com", reponse.context["form"]["email"].value()
+        )
 
     def test_create_cutomer_address(self):
         address = CustomerAddress.objects.get(user=self.user)
@@ -48,6 +58,13 @@ class UserTest(TestCase):
         response = self.client.get(reverse_lazy("address_settings"))
         self.assertAlmostEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "settings.html")
-        arr = ["testward", "testcity", "testlandmark", 123456, "11_22"]
-        for i in arr:
-            self.assertContains(response, i)
+
+        self.assertAlmostEqual("testward", response.context["form"]["ward"].value())
+        self.assertAlmostEqual(
+            "testcity", response.context["form"]["village_city"].value()
+        )
+        self.assertAlmostEqual(
+            "testlandmark", response.context["form"]["landmark"].value()
+        )
+        self.assertAlmostEqual("11_22", response.context["form"]["house_no"].value())
+        self.assertAlmostEqual(123456, response.context["form"]["pincode"].value())
